@@ -1,0 +1,86 @@
+[
+	{
+		"remark": 		"Bypass signature check : BEQ XX -> B XX",
+		"offset":		"0x9684D4",
+		"size":			4,
+		"prev_data":	"1D 00 00 0A",
+		"patch":		"1D 00 00 EA"
+	},
+    {
+		"remark": 		"Rename `quit` to `OCBB`",
+		"offset":		"0xB79298",
+		"size":			4,
+		"prev_data":	"71 75 69 74",
+		"patch":		"4F 43 42 42"
+	},
+    {
+		"remark": 		"Rename `VSPR` to `h`",
+		"offset":		"0xB793AC",
+		"size":			5,
+		"prev_data":	"56 53 50 5C 52",
+		"patch":		"48 00 00 00 00"
+	},
+    {
+		"remark": 		"Rename `DEBUG` to `OCSD`",
+		"offset":		"0xB793C4",
+		"size":			5,
+		"prev_data":	"44 45 42 55 47",
+		"patch":		"4F 43 53 44 00"
+	},
+    {
+		"remark": 		"Rename `NULL_CMD` to `FAN`",
+		"offset":		"0xB79420",
+		"size":			8,
+		"prev_data":	"4E 55 4C 4C 5F 43 4D 44",
+		"patch":		"46 41 4E 00 00 00 00 00"
+	},
+    {
+		"remark": 		"Add function handler for new functions",
+		"offset":		"0xAF717C",
+		"size":			116,
+		"prev_data":	"0D C0 A0 E1 20 D8 2D E9 04 B0 4C E2 89 13 00 EB AE 1F 8F E2 00 50 A0 E1 E1 96 00 EB 8C 10 1F E5 04 00 95 E5 01 00 50 E1 09 00 00 1A 02 00 A0 E3 28 00 85 E5 08 00 A0 E3 60 00 85 E5 00 00 A0 E3 98 00 85 E5 B4 00 1F E5 36 00 00 EB F4 10 4F E2 05 00 00 EA 04 00 A0 E3 28 00 85 E5 00 00 A0 E3 60 00 85 E5 98 00 85 E5 9E 1F 8F E2 04 00 95 E5 67 D7 FF EB",
+		"file":			"fn_handler.S"
+	},
+	{
+		"remark": 		"Immediately Break sub_109325C w/ jump to sub_1093648",
+		"offset":		"0x496EE4",
+		"size":			4,
+		"prev_data":	"0D C0 A0 E1",
+		"patch":		"F9 00 00 EA"
+	},
+		{
+		"remark": 		"sub_1093648 Logging Patch",
+		"offset":		"0x4972D4",
+		"size":			172,
+		"prev_data":	"E0 DC 2D E9 04 B0 4C E2 4A DF 4D E2 00 A0 A0 E1 01 50 A0 E1 02 60 A0 E1 03 70 A0 E1 05 20 A0 E3 14 11 9F E5 46 0F 8D E2 FC 88 5C EB 0C 11 9F E5 00 00 95 E5 01 00 50 E1 46 1F 8D 02 05 00 A0 01 1E FE FF 0B 00 00 95 E5 00 00 90 E5 00 00 50 E3 E0 AC 1B D9 18 01 DD E5 00 00 50 E3 E0 AC 1B 09 18 00 8D E2 40 10 A0 E3 26 CA 5B EB D0 10 9F E5 00 00 91 E5 12 1E 9D E2 10 10 8D 02 F4 C5 5B EB 00 00 50 E3 0C 00 00 1A 00 00 5A E3 B4 50 8F 02 B8 50 8F 12 BC 00 9F E5 24 11 9D E5 FB CE 5B EB 00 C0 A0 E1 20 A1 9D E5 07 00 A0 E1",
+		"file":			"stdout.S"
+	},
+	{
+		"remark": 		"Add entry jump to OCBB",
+		"offset":		"0xB90584",
+		"size":			4,
+		"prev_data":	"90 9E 01 00",
+		"patch":		"88 D1 01 00"
+	},
+	{
+		"remark": 		"Add entry jump to health",
+		"offset":		"0xB90798",
+		"size":			4,
+		"prev_data":	"AC C7 01 00",
+		"patch":		"70 D1 01 00"
+	},
+	{
+		"remark": 		"Add entry jump to OCSD",
+		"offset":		"0xB907EC",
+		"size":			4,
+		"prev_data":	"08 CF 01 00",
+		"patch":		"80 D1 01 00"
+	},
+	{
+		"remark": 		"Add entry jump to fan",
+		"offset":		"0xB908CC",
+		"size":			4,
+		"prev_data":	"70 D1 01 00",
+		"patch":		"78 D1 01 00"
+	}
+]

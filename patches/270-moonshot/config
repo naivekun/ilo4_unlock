@@ -1,0 +1,5 @@
+NAME="270-moonshot"
+BINARY_NAME="ilo4_270_moonshot.bin"
+BINARY_URL="https://downloads.hpe.com/pub/softlib2/software1/pubsw-windows/p1676752000/v221329/ilo4_270_moonshot.bin"
+BINARY_SHA1="a6235bad18a16ed77d3ebbd839d2af849d572b9b"
+RESULT_SHA1="ebb44e04438e8c688c9b1de1dfd52565685799bc"
