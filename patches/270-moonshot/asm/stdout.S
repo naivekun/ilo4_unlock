@@ -6,7 +6,7 @@ start:									; MOV R12, SP (not overwritten)
 	SUB		SP, SP, #0x400				; Allocate space on stack
 	MOV		R1, R0						; save first parameter
 	ADD		R0, SP, #0x80				; Set R0 to 0x80 in stack struct
-	BL		0x1718b34					; libc call (?)
+	BL		0x1723a70					; libc call (?)
 	MOV		R6, #0xD					; R6 = 0xD (\r)
 	ADD		R7, SP, #0x80				; Move R7 to 0x80 in stack struct
 restart:
@@ -34,7 +34,7 @@ charloop:								;
 	MOV		R2, #0x60					; R2 = 0x60
 	ADD		R1, SP, #4					; R1 = SP + 0x4
 	ADR		R0, vspLabel				; R0 = VSPCHANNEL Task
-	BL		0x17e6cb4					; create IPC call (this is similar to .ConAppCLI's sub_5B57C / health IPC call)
+	BL		0x17f1bf0					; create IPC call (this is similar to .ConAppCLI's sub_5B57C / health IPC call)
 	LDRB	R0, [R7]					; get current character
 	CMP		R0, #0						; if != \0
 	BNE		restart						;	restart (send another line?)
